@@ -9,10 +9,13 @@ const $userPasswordErrorMsg = document.querySelector('.user-password-error-msg')
 const USER_EMAIL = "thomas@facadia.com"
 const USER_PASSWORD = "azerty"
 
+console.log("test")
+
 const checkUserEmailInput = () => {
     const isUserEmailValid = $userEmailInput.value.toLowerCase() === USER_EMAIL
 
     if (isUserEmailValid) {
+        console.log("oui")
         $userEmailErrorMsg.classList.add('hidden')
     } else {
         $userEmailErrorMsg.classList.remove('hidden')
@@ -35,8 +38,9 @@ const checkUserPasswordInput = () => {
 
 const isFormValid = () => checkUserEmailInput() && checkUserPasswordInput()
 
-$signInForm.addEventListener('submit', function() {
+$signInForm.addEventListener('submit', function(event) {
+  event.preventDefault();
     if (isFormValid()) {
-        window.location = 'http://127.0.0.1:5500/pages/homepage.html'
-    }
+       window.location = 'http://127.0.0.1:5500/pages/homepage.html'
+    } 
 })
