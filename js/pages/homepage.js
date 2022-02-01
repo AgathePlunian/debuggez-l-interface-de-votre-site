@@ -4,7 +4,7 @@ const $dropdownForm = document.querySelector('.dropdown-form')
 const ITEMS_PER_PAGE = 8
 
 const retrieveSensorsData = () => fetch('/data/homepage-data.json')
-    .then(res => res.json)
+    .then(res => res.json())
     .then(data => data.facades)
     .catch(err => {})
 
