@@ -31,6 +31,7 @@ const retrieveSensorData = () => fetch('/data/facade-detail-data.json')
 
 
 const fillSensorTable = sensorData => {
+   
     $sensorId.textContent = sensorData.id
     $sensorBrand.textContent = sensorData.marque
     $sensorStatus.textContent = sensorData.isActive ? "Actif" : "Inactif"
@@ -46,6 +47,8 @@ const fillSensorTable = sensorData => {
 const fillWeatherForecastTable = weatherForecastData => {
     $weatherLocation.textContent = weatherForecastData.location.name
     $weatherTemperature.textContent = `${weatherForecastData.current.temperature} °C`
+    $weatherDescription.textContent = weatherForecastData.current.weather_descriptions[0];
+
     
 }
 
